@@ -16,6 +16,7 @@ import NumberContainer from "../components/NumberContainer";
 import Colors from "../constants/colors";
 import BodyText from "../components/BodyText";
 import TitleText from "../components/TitleText";
+import MainButton from "../components/MainButton";
 
 const StartGameScree = (props) => {
   const [enteredValue, setEnteredValue] = useState("");
@@ -52,10 +53,12 @@ const StartGameScree = (props) => {
       <Card style={styles.summeryContainer}>
         <BodyText>You selected</BodyText>
         <NumberContainer>{selectedNumber}</NumberContainer>
-        <Button
-          title="START GAME"
+        <MainButton
+          activeOpacity={0.6}
           onPress={() => props.onStartGame(selectedNumber)}
-        />
+        >
+          START GAME
+        </MainButton>
       </Card>
     );
   }
